@@ -1,0 +1,11 @@
+{
+    "name": "cf.gov satellite app frontend CI workflow",
+    "description": "A frontend CI workflow template for cf.gov satellite apps.",
+    "iconName": "nodejs",
+    "categories": [
+        "JavaScript"
+    ],
+    "filePatterns": [
+        "package.json$"
+    ]
+}
