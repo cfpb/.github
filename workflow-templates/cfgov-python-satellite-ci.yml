@@ -1,6 +1,11 @@
 name: Python CI workflow
 
-on: [pull_request, push]
+on:
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
 
 jobs:
   backend:
@@ -10,8 +15,8 @@ jobs:
       matrix:
         # Add the appropriate Tox environments for the satellite here
         toxenv:
-            - py36
-            - py38
+            - py36-dj22
+            - py38-dj22
         include:
           # Adjust the Python versions required for the tox environments as 
           # needed
@@ -22,6 +27,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v1
